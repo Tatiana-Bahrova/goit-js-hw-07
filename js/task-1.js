@@ -13,13 +13,12 @@ const ulCategories = document.querySelector("#categories");
 const liItemElem = document.querySelectorAll(".item");
 console.log("Number of categories:", liItemElem.length);
 
-const headerOfCategories = document.querySelectorAll(".item h2");
+liItemElem.forEach((item) => {
+  const header = item.querySelector("h2");
+  const ulNearHeader = item.querySelector("ul");
+  const ulChild = ulNearHeader.querySelectorAll("li");
+  console.log(`Category: ${header.textContent}`);
+  console.log(`Element: ${ulChild.length}`);
+});
 
-const headerTextEl = (headers) => {
-  headers.forEach((header) => {
-    const ulChild = header.nextElementSibling.querySelectorAll("li");
-    console.log(`Category: ${header.textContent}`);
-    console.log(`Element: ${ulChild.length}`);
-  });
-};
 headerTextEl(headerOfCategories);

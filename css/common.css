@@ -100,8 +100,12 @@ li:not(:last-child) {
 }
 .gallery > li {
   width: 360px;
-  height: auto;
+  height: 300px;
   padding: 0;
   margin: 0;
   flex-basis: calc((100% - 2 * 24px) / 3);
+}
+.gallery img {
+  object-fit: cover;
+  height: 100%;
 }
