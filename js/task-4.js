@@ -11,18 +11,19 @@ const formElem = document.querySelector(".login-form");
 
 const onFormElem = (event) => {
   event.preventDefault();
+  if (
+    formElem.elements.email.value === "" ||
+    formElem.elements.password.value === ""
+  ) {
+    alert("All form fields must be filled in");
+  }
+
   const formData = {
     email: formElem.elements.email.value.trim(),
     password: formElem.elements.password.value.trim(),
   };
   console.log(formData);
 
-  if (
-    formElem.elements.email.value === "" &&
-    formElem.elements.password.value === ""
-  ) {
-    alert("All form fields must be filled in");
-  }
   formElem.reset();
 };
 formElem.addEventListener("submit", onFormElem);

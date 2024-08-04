@@ -30,14 +30,17 @@ function getRandomHexColor() {
 }
 
 function createBoxes(amount) {
+  let divEl = [];
   let width = 30;
   let height = 30;
   for (let i = 0; i < amount; i++) {
+    divEl.push(
+      `<div class='new-div' style='width: ${width}px; height: ${height}px; background-color: ${getRandomHexColor()}'></div>`
+    );
     width += 10;
     height += 10;
-    const divEl = `<div class='new-div' style='width: ${width}px; height: ${height}px; background-color: ${getRandomHexColor()}'></div>`;
-    divBoxes.insertAdjacentHTML("beforeend", divEl);
   }
+  divBoxes.innerHTML = divEl.join("");
 }
 
 function onBtnCreate() {
